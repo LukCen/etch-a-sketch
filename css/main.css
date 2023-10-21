@@ -16,4 +16,5 @@ main {
   height: 50px;
   width: 50px;
   background-color: grey;
+  cursor: pointer;
 }
