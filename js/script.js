@@ -20,6 +20,9 @@ const cell = document.querySelectorAll('.draw-cell')
 const cellArray = Array.from(cell)
 cellArray.forEach((c) => {
   c.addEventListener('mouseover', () => {
-    c.style.backgroundColor = 'red'
+    const randomRed = Math.floor(Math.random() * 256)
+    const randomGreen = Math.floor(Math.random() * 256)
+    const randomBlue = Math.floor(Math.random() * 256)
+    c.style.backgroundColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`
   })
 })
