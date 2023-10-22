@@ -1,22 +1,16 @@
 'use strict'
 
 const main = document.querySelector('main')
-const ask = prompt('How many elements do you want on your grid?')
+const ask = prompt('Type in the height and width of your grid. Eg. typing in 10 will generate a 10 x 10 grid. Limit 100.')
 
-const rootOfNumber = Math.floor(Math.pow(ask, 1 / 2)) // this should make sure we only get integers I think
 const answer = Number(ask)
-const elementSize = answer / rootOfNumber
-main.style.gridTemplateColumns = `repeat(${rootOfNumber}, ${elementSize}px)`
-main.style.gridTemplateRows = `repeat(${rootOfNumber}, ${elementSize}px)`
+main.style.gridTemplateColumns = `repeat(${answer}, minmax(.9px, 1fr))`
+main.style.gridTemplateRows = `repeat(${answer}, minmax(.9px, 1fr))`
 
-function testDraw (ask = 0) {
-  for (let i = 0; i < ask; i++) {
+function testDraw (answer = 0) {
+  for (let i = 0; i < answer * answer; i++) {
     const n = document.createElement('div')
     n.classList.add('draw-cell')
-    n.style.height = `${elementSize}px`
-    n.style.width = `${elementSize}px`
-    n.style.minHeight = `${rootOfNumber}px`
-    n.style.minWidth = `${rootOfNumber}px`
     main.append(n)
   }
 }

@@ -4,8 +4,6 @@ main {
   min-width: 760px;
   border: 1px solid red;
   display: grid;
-  /* grid-template-columns: repeat(16);
-  grid-template-rows: repeat(16); */
   gap: 1px;
   padding: 30px;
   place-content: center;
